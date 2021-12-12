@@ -8,6 +8,7 @@ import ReviewsIndex from '../views/ReviewsIndex.vue'
 import MediaIndex from '../views/MediaIndex.vue'
 import ReviewNew from '../views/ReviewNew.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
