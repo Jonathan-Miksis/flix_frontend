@@ -8,14 +8,11 @@
     <h1>Movies and TV</h1>
       <h2>Title: {{ medium.title}}</h2>
       <p>Release Year: {{ medium.year }}</p>
-      <p>Director: {{ medium.director }}</p>
-      <p>Cast: {{ medium.cast }}</p>  
-      <p>Synopsis: {{ medium.synopsis }}</p>  
       <p>IMDb Rating: {{ medium.rating }}</p>
-      <!-- <img v-bind:src="medium.artwork_url" v-bind:alt="medium.synopsis"> -->
-      <!-- <img v-bind:src="medium.trailer_url" v-bind:alt="medium.synopsis"> -->
-      <p>Flix Reviews: {{ medium.reviews }}</p>
+      <!-- <img v-bind:src="medium.artwork_url" v-bind:alt="medium.synopsis"> 
+      <img v-bind:src="medium.trailer_url" v-bind:alt="medium.synopsis">  -->
       <router-link v-bind:to="`/reviews/new`">New Review</router-link>
+      <button v-on:click="showMedium(medium)">More Information</button>
       <hr>
     </div>
   </div>
@@ -47,7 +44,14 @@ export default {
     },
     setSortAttribute: function(attribute) {
       this.sortAttribute = attribute;
-    }
+    },
+    showMedium: function(medium) {
+      axios.get("/media/" + this.$route.params.id).then((response) => {
+        console.log("pulling up the medium...");
+        this.medium = response.data;
+        this.$router.push("/media/" + medium.id);
+      });
+    },
   },
 };
 </script>

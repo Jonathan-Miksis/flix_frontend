@@ -5,11 +5,12 @@
     <p>Director: {{ medium.director }}</p>
     <p>Cast: {{ medium.cast }}</p>  
     <p>Synopsis: {{ medium.synopsis }}</p>  
-    <p>Genre: {{ medium.genre }}</p>
     <p>IMDb Rating: {{ medium.rating }}</p>
-    <p>Artwork: {{ medium.artwork_url }}</p>
-    <p>Trailer: {{ medium.trailer_url }}</p>
-    <p>Flix Reviews: {{ medium.reviews}}</p>
+    <img v-bind:src="medium.artwork_url" v-bind:alt="medium.synopsis"> 
+    <img v-bind:src="medium.trailer_url" v-bind:alt="medium.synopsis"> 
+    <p>Flix Reviews: {{ medium.reviews.title }}</p>
+    <p> {{ medium.reviews.flix_rating }}</p>
+    <p> {{ medium.reviews.post }}</p>
   </div>
 </template>
 

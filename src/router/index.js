@@ -7,7 +7,7 @@ import Logout from '../views/Logout.vue'
 import ReviewsIndex from '../views/ReviewsIndex.vue'
 import MediaIndex from '../views/MediaIndex.vue'
 import ReviewNew from '../views/ReviewNew.vue'
-
+import MediumShow from '../views/MediumShow.vue'
 
 Vue.use(VueRouter)
 
@@ -23,14 +23,19 @@ const routes = [
     component: MediaIndex
   },
   {
-    path: '/reviews/new',
-    name: 'ReviewNew',
-    component: ReviewNew
+    path: '/media/:id',
+    name: 'MediaShow',
+    component: MediumShow
   },
   {
     path: '/reviews',
     name: 'ReviewsIndex',
     component: ReviewsIndex
+  },
+  {
+    path: '/reviews/new',
+    name: 'ReviewNew',
+    component: ReviewNew
   },
   {
     path: '/signup',
