@@ -10,11 +10,12 @@
       <p>Release Year: {{ medium.year }}</p>
       <p>Director: {{ medium.director }}</p>
       <p>Cast: {{ medium.cast }}</p>  
-      <p>Genre: {{ medium.genre }}</p>
+      <p>Synopsis: {{ medium.synopsis }}</p>  
       <p>IMDb Rating: {{ medium.rating }}</p>
-      <p>{{ medium.artwork_url }}</p>
-      <p>{{ medium.trailer_url }}</p>
-      <p>{{ medium.reviews}}</p>
+      <!-- <img v-bind:src="medium.artwork_url" v-bind:alt="medium.synopsis"> -->
+      <!-- <img v-bind:src="medium.trailer_url" v-bind:alt="medium.synopsis"> -->
+      <p>Flix Reviews: {{ medium.reviews }}</p>
+      <router-link v-bind:to="`/reviews/new`">New Review</router-link>
       <hr>
     </div>
   </div>

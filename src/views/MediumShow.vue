@@ -4,11 +4,12 @@
     <p>Release Year: {{ medium.year }}</p>
     <p>Director: {{ medium.director }}</p>
     <p>Cast: {{ medium.cast }}</p>  
+    <p>Synopsis: {{ medium.synopsis }}</p>  
     <p>Genre: {{ medium.genre }}</p>
     <p>IMDb Rating: {{ medium.rating }}</p>
-    <p>{{ medium.artwork_url }}</p>
-    <p>{{ medium.trailer_url }}</p>
-    <p>{{ medium.reviews}}</p>
+    <p>Artwork: {{ medium.artwork_url }}</p>
+    <p>Trailer: {{ medium.trailer_url }}</p>
+    <p>Flix Reviews: {{ medium.reviews}}</p>
   </div>
 </template>
 

@@ -6,6 +6,7 @@
       <p>{{ review.flix_rating }}</p>
       <p>{{ review.post }}</p>
       <p>{{ review.medium }}</p>
+      <p>{{ review.commemts }}</p>
       <hr>
     </div>
   </div>
