@@ -2,12 +2,12 @@
   <div id="app">
     <h1>Flix</h1>
     <div id="nav">
-      <router-link to="/media">Movies and TV</router-link> |
-      <router-link to="/reviews">Reviews</router-link> |
-      <router-link to="/reviews/new">Create Review</router-link> |
-      <router-link to="/signup" v-if="!isLoggedIn()">Signup</router-link> |
-      <router-link to="/login" v-if="!isLoggedIn()">Login</router-link> |
-      <router-link to="/logout" v-if="isLoggedIn()">Logout</router-link>
+      <router-link to="/media" v-if="isLoggedIn()"> Movies and TV | </router-link> 
+      <router-link to="/reviews" v-if="isLoggedIn()"> Reviews | </router-link> 
+      <router-link to="/reviews/new" v-if="isLoggedIn()">Create Review |</router-link> 
+      <router-link to="/signup" v-if="!isLoggedIn()">Signup | </router-link> 
+      <router-link to="/login" v-if="!isLoggedIn()">Login </router-link> 
+      <router-link to="/logout" v-if="isLoggedIn()"> Logout</router-link>
     </div>
     <router-view/>
   </div>

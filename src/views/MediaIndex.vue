@@ -4,8 +4,8 @@
     <datalist id="titles">
         <option v-for="medium in media">{{ medium.title }}</option>
     </datalist>
+    <div v-for="medium in orderBy(filterBy(media, searchTerm, 'title'), sortAttribute, sortOrder)">
     <h1>Movies and TV</h1>
-    <div v-for="medium in media" v-bind:key="medium.id">
       <h2>Title: {{ medium.title}}</h2>
       <p>Release Year: {{ medium.year }}</p>
       <p>Director: {{ medium.director }}</p>
@@ -23,12 +23,16 @@
 
 <script>
 import axios from 'axios';
+import Vue2Filters from 'vue2-filters';
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       media: {},
       searchTerm: "",
+      sortOrder: 1,
+      sortAttribute: "title"
     };
   },
   created: function() {
@@ -41,6 +45,9 @@ export default {
         this.media = response.data;
       });
     },
+    setSortAttribute: function(attribute) {
+      this.sortAttribute = attribute;
+    }
   },
 };
 </script>
