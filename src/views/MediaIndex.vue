@@ -9,9 +9,7 @@
       <h2>Title: {{ medium.title}}</h2>
       <p>Release Year: {{ medium.year }}</p>
       <p>IMDb Rating: {{ medium.rating }}</p>
-      <!-- <img v-bind:src="medium.artwork_url" v-bind:alt="medium.synopsis"> 
-      <img v-bind:src="medium.trailer_url" v-bind:alt="medium.synopsis">  -->
-      <router-link v-bind:to="`/reviews/new`">New Review</router-link>
+      <!-- <img v-bind:src="medium.artwork_url" v-bind:alt="medium.title">  -->
       <button v-on:click="showMedium(medium)">More Information</button>
       <hr>
     </div>
@@ -29,7 +27,7 @@ export default {
       media: {},
       searchTerm: "",
       sortOrder: 1,
-      sortAttribute: "title"
+      sortAttribute: "title",
     };
   },
   created: function() {
