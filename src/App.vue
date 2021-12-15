@@ -287,7 +287,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Logo -->
-                <a class="navbar-brand" href="../../index.html">
+                <a class="navbar-brand" href="/">
                     <img src="/../static/img/logo.svg" title="" alt="">
                 </a>
                 <!-- Logo -->
@@ -295,14 +295,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="dropdown nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="/media" class="nav-link">Movies and TV</a>
                             <label class="px-dropdown-toggle mob-menu"></label>
                             <ul class="dropdown-menu list-unstyled left">
-                                <li><a class="dropdown-item" href="../../home/index.html">Home Option 1</a></li>
+                                <li><a class="dropdown-item" href="/media">Home Option 1</a></li>
                             </ul>
                         </li>
                         <li class="dropdown dropdown-full nav-item">
-                            <a href="#" class="nav-link">Shop</a>
+                            <a href="/reviews" class="nav-link">Reviews</a>
                             <label class="px-dropdown-toggle mob-menu"></label>
                             <div class="dropdown-menu dropdown-menu-lg py-lg-2">
                                 <div class="container px-0">
@@ -319,74 +319,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="dropdown dropdown-full nav-item">
-                            <a href="#" class="nav-link">Account</a>
-                            <label class="px-dropdown-toggle mob-menu"></label>
-                            <div class="dropdown-menu dropdown-menu-lg py-lg-2">
-                                <div class="container px-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-6 my-3">
-                                            <h6 class="px-3">Account</h6>
-                                            <ul class="list-unstyled">
-                                                <li>
-                                                    <a href="../../account-01/login.html" class="dropdown-item">Login </a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-01/sign-up.html" class="dropdown-item">Sign up</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-01/reset-password.html" class="dropdown-item">Forgot Password</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-01/wishlist.html" class="dropdown-item">Wishlist</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-01/shopping-cart.html" class="dropdown-item">Shopping Cart </a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-01/my-account.html" class="dropdown-item">My Account</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-01/checkout.html" class="dropdown-item">Checkout</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 my-3">
-                                            <h6 class="px-3">My Account Option 2 </h6>
-                                            <ul class="list-unstyled">
-                                                <li>
-                                                    <a href="../../account-02/account-address.html" class="dropdown-item">Account Address</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-02/account-order.html" class="dropdown-item">Account Order</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-02/account-payment.html" class="dropdown-item">Account Payment</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-02/account-profile.html" class="dropdown-item">Account Profile</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-02/account-tickets.html" class="dropdown-item">Account Tickets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="../../account-02/account-wishlist.html" class="dropdown-item">Account Wishlist</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="#" class="nav-link">Blog</a>
-                            <label class="px-dropdown-toggle mob-menu"></label>
-                            <div class="dropdown-menu left shadow-lg">
-                                <a class="dropdown-item" href="../../blog/blog.html">Blog</a>
-                                <a class="dropdown-item" href="../../blog/blog-single.html">Blog Single</a>
-                            </div>
-                        </li>
-                    </ul>
+                     </uL>
                 </div>
                 <!-- End Menu -->
                 <div class="nav flex-nowrap align-items-center header-right">

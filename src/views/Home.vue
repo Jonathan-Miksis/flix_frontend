@@ -40,12 +40,9 @@
         }'>
             <!-- Slide -->
             <div v-for="medium in media">
-            <div class="bg-no-repeat bg-cover bg-center mx-1"> 
-                         
+            <div class="bg-no-repeat bg-cover bg-center mx-1" img v-bind:src="medium.artwork_url">            
                 <div class="container">
-                  
                     <div class="row min-vh-75 align-items-center justify-content-center py-12">
-                      <img v-bind:src="medium.artwork_url"> 
                         <div class="col-lg-8 text-center">
                             <div class="bg-white px-4 py-4 hc-slider-box">
                                 <h6 class="fw-500 text-uppercase mb-3">You're Looking Good</h6>
@@ -109,6 +106,7 @@
             </div>
         </div>
         <!-- End Home Slider -->
+
     </main>
     <!-- End Main -->
   </div>
