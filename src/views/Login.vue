@@ -86,7 +86,7 @@
             axios.defaults.headers.common["Authorization"] =
               "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            this.$router.push("/reviews");
+            this.$router.push("/");
           })
           .catch((error) => {
             console.log(error.response);
