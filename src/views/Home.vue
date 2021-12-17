@@ -104,6 +104,58 @@
             </div>
         </div>
         <!-- End Home Slider -->
+        <!-- Privacy Policy -->
+        <section class="py-5 bg-gray-100 border-top">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="d-flex">
+                            <div class="fs-1 lh-1 text-primary">
+                                <i class="bi bi-search"></i>
+                            </div>
+                            <div class="col ps-3">
+                                <h6 class="mb-1">100s of Movies and Shows</h6>
+                                <p class="m-0">FInd your next obsession in the database</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="d-flex">
+                            <div class="fs-1 lh-1 text-primary">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                            <div class="col ps-3">
+                                <h6 class="mb-1">Review and Find Friends</h6>
+                                <p class="m-0">Write and comment on other reviews while following other members to read theirs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="d-flex">
+                            <div class="fs-1 lh-1 text-primary">
+                                <i class="bi bi-heart"></i>
+                            </div>
+                            <div class="col ps-3">
+                                <h6 class="mb-1">Keep Your Watchlist</h6>
+                                <p class="m-0">Always make sure you have the next best movie or show on your list</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="d-flex">
+                            <div class="fs-1 lh-1 text-primary">
+                                <i class="bi bi-star-fill active"></i>
+                            </div>
+                            <div class="col ps-3">
+                                <h6 class="mb-1">Rate Each Movie or Show</h6>
+                                <p class="m-0">Take a look at the Flix Rating to see what other people think!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Privacy Policy -->
         
     </main>
     <!-- End Main -->

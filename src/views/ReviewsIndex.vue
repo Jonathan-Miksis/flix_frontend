@@ -33,9 +33,9 @@
                                     </a>
                                     <div class="mt-n8 mx-3 mx-lg-4 border bg-white p-4 position-relative">
                                         <div class="text-muted mb-3">{{ review.user.username }}</div>
-                                        <a class="h5" href="#">{{ review.title }}</a>
+                                        <a class="h5" href="#">{{ review.title }} || {{review.flix_rating}}</a> 
                                         <p class="pt-3">{{review.post}}</p>
-                                        <a class="ms-auto font-w-600 link-effect" href="blog-single.html">Read More</a>
+                                        <a class="ms-auto font-w-600 link-effect" href="blog-single.html">Go to Page</a>
                                     </div>
                                 </div>
                             </div>

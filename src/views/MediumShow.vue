@@ -84,9 +84,14 @@
                             
                             <div class="product-detail-actions d-flex flex-wrap pt-3">
                                 <div class="cart-button mb-3 d-flex">
-                                    <button class="btn btn-dark me-3"><a></a>
+                                    <button class="btn btn-dark me-3" v-bind:src="medium.trailer_url"><a></a>
                                         <i></i> Trailer
                                     </button>
+                                    <dialog id="show-trailer">
+                                        <form method="dialog">
+                                            <p>Here's the Trailer</p>
+                                        </form>
+                                    </dialog>
                                 </div>
                             </div>
                         
@@ -291,6 +296,9 @@ export default {
         return false;
       }
     },
+    doModal: function() {
+        document.querySelector("#show-trailer").showModal();
+    }
   },
 };
 </script>
