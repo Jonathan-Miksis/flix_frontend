@@ -69,7 +69,7 @@
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="/">
-                    <img src="/../static/img/logo.svg" title="" alt="">
+                    Flix: The Movie Lovers App
                 </a>
                 <!-- Logo -->
                 <!-- Menu -->
@@ -105,7 +105,7 @@
                 <div class="nav flex-nowrap align-items-center header-right">
                     <!-- Nav Search-->
                     <div class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#search_open" href="javascript:void(0)" v-model="searchTerm" list="titles">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#search_open" v-model="searchTerm" list="titles">
                             <datalist id="titles">
                                 <option v-for="medium in media">{{ medium.title }}</option>
                             </datalist>
@@ -149,6 +149,7 @@
 </style>
 
 <script>
+import Vue2Filters from 'vue2-filters';
 
 export default {
     
@@ -164,7 +165,13 @@ export default {
       } else {
         return false;
       }
-    }
+    },
+    indexMedia: function() {
+      axios.get("/media").then((response) => {
+        console.log("Here's the movies and tv...");
+        this.media = response.data;
+      });
+    },
   }
 }
 </script>

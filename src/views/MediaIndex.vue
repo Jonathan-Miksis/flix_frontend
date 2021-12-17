@@ -47,12 +47,12 @@
                         <div class="dropdown">
                             <a class="btn btn-white btn-sm border dropdown-toggle" href="#" role="button"
                                 id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Short by
+                                Sort by
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Featured</a></li>
                                 <li><a class="dropdown-item" href="#">Best selling</a></li>
-                                <li><a class="dropdown-item" href="#">Alphabetically, A-Z</a></li>
+                                <li><a class="dropdown-item"> Alphabetically, A-Z</a></li>
                                 <li><a class="dropdown-item" href="#">Alphabetically, Z-A</a></li>
                                 <li><a class="dropdown-item" href="#">Price, low to high</a></li>
                                 <li><a class="dropdown-item" href="#">Price, high to low</a></li>
@@ -152,6 +152,7 @@ export default {
       searchTerm: "",
       sortOrder: 1,
       sortAttribute: "title",
+      filterOptions: ["Title", "Director", "Rating"]
     };
   },
 

@@ -28,7 +28,7 @@
                         <div class="row" >
                             <div class="col-sm-6 my-3" v-for="review in reviews" v-bind:key="review.id">
                                 <div class="hover-top-in">
-                                    <a href="#">
+                                    <a v-on:click="showMedium(medium)">
                                         <img class="img-fluid" v-bind:src="review.medium.artwork_url" title="" alt="">
                                     </a>
                                     <div class="mt-n8 mx-3 mx-lg-4 border bg-white p-4 position-relative">
@@ -90,6 +90,13 @@ export default {
       axios.get("/reviews").then((response) => {
         console.log("Here are the reviews...");
         this.reviews = response.data;
+      });
+    },
+    showMedium: function(medium) {
+      axios.get("/media/" + this.$route.params.id).then((response) => {
+        console.log("pulling up the medium...");
+        this.medium = response.data;
+        this.$router.push("/media/" + medium.id);
       });
     },
   },

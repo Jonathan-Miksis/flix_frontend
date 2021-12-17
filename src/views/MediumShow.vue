@@ -84,9 +84,9 @@
                             
                             <div class="product-detail-actions d-flex flex-wrap pt-3">
                                 <div class="cart-button mb-3 d-flex">
-                                    <button class="btn btn-dark me-3">
+                                    <button class="btn btn-dark me-3"><a></a>
                                         <i></i> Trailer
-                                    </button v-bind:src="medium.trailer_url">
+                                    </button>
                                 </div>
                             </div>
                         
@@ -113,17 +113,13 @@
                                                 </div>
                                                 <div class="col-sm-6 text-sm-end">
                                                     <a href="/reviews" class="me-4">View all</a>
-                                                    <a data-bs-toggle="collapse" href="#pd_add_review" role="button" aria-expanded="false" aria-controls="pd_add_review">Write a review</a>
+                                                    <a data-bs-toggle="collapse" href="/login" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="!isLoggedIn()">Sign in to leave a review</a>
+                                                    <a data-bs-toggle="collapse" href="#pd_add_review" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="isLoggedIn()">Write a review</a>
                                                 </div>
                                                 <div class="col-12 collapse" id="pd_add_review">
                                                     <div class="my-4 p-3 bg-gray-100 border">
                                                         <form>
                                                             <div class="row g-2">
-                                                                <div class="col-sm-6">
-                                                                    <label class="form-label">Username</label>
-                                                                    <input type="text" name="name" class="form-control form-control-sm">
-                                                                </div>
-                                                              
                                                                 <div class="col-sm-12">
                                                                     <label class="form-label m-0 pe-3 w-100">Rating</label>
                                                                     <input type="text" v-model="newReview.flix_rating" class="form-control form-control-sm">
@@ -138,7 +134,7 @@
                                                                     <textarea rows="5" v-model="newReview.post" class="form-control"></textarea>
                                                                 </div>
                                                                 <div class="col-sm-12 pt-2">
-                                                                    <button class="btn btn-primary">Submit Review</button>
+                                                                    <button class="btn btn-primary" v-on:click="createReview()">Submit Review</button>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -213,253 +209,37 @@
                         }
                     ]
                 }'>
-                    <div class="p-2" >
-                        <div class="product-card-1">
-                            <div class="product-card-image">
-                                <div class="product-action">
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="product-media">
-                                    <a href="#">
-                                        <img class="img-fluid" title="" alt="">
-                                    </a>
-                                    <div class="product-cart-btn">
-                                        <a href="#" class="btn btn-primary btn-sm w-100">
-                                            More on This
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-meta small">
-                                    <a href="#">Clothing</a>, <a href="#">Men</a>
-                                </div>
-                                <div class="rating-star text">
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <h6 class="product-title">
-                                    <a href="#">Fine-knit sweater</a>
-                                </h6>
-                                <div class="product-price">
-                                    <span class="text-primary">$28.<small>50</small></span>
-                                    <del class="fs-sm text-muted">$38.<small>50</small></del>
+                    <!-- Slide -->
+                        <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/americans-s1.jpeg);">
+                            <div class="container">
+                                <div class="row min-vh-75 align-items-center justify-content-center py-12">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-2" v-for="medium in media" v-bind:key="medium.id">
-                        <div class="product-card-1">
-                            <div class="product-card-image">
-                                <div class="badge-ribbon">
-                                    <span class="badge bg-danger">Sale</span>
-                                </div>
-                                <div class="product-action">
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-heart"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-arrow-left-right"></i>
-                                    </a>
-                                    <a data-bs-toggle="modal" data-bs-target="#px-quick-view" href="javascript:void(0)" class="btn btn-outline-primary">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
-                                </div>
-                                <div class="product-media">
-                                    <a href="#">
-                                        <img class="img-fluid" v-bind:src="medium.artwork_url" title="" alt="">
-                                    </a>
-                                    <div class="product-cart-btn">
-                                        <a href="#" class="btn btn-primary btn-sm w-100">
-                                            <i class="bi bi-cart"></i>
-                                            Add to cart
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-meta small">
-                                    <a href="#">HELLO</a>, <a href="#">Men</a>
-                                </div>
-                                <div class="rating-star text">
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <h6 class="product-title">
-                                    <a href="#">{{medium.title}}</a>
-                                </h6>
-                                <div class="product-price">
-                                    <span class="text-primary">$28.<small>50</small></span>
-                                    <del class="fs-sm text-muted">$38.<small>50</small></del>
+                        <!-- Slide -->
+                        <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/casino_royale.jpg);">
+                            <div class="container">
+                                <div class="row min-vh-75 align-items-center justify-content-center py-12">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-2">
-                        
-                    </div>
-                    <div class="p-2">
-                        <div class="product-card-1">
-                            <div class="product-card-image">
-                                <div class="badge-ribbon">
-                                    <span class="badge bg-danger">Sale</span>
-                                </div>
-                                <div class="product-action">
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-heart"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-arrow-left-right"></i>
-                                    </a>
-                                    <a data-bs-toggle="modal" data-bs-target="#px-quick-view" href="javascript:void(0)" class="btn btn-outline-primary">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
-                                </div>
-                                <div class="product-media">
-                                    <a href="#">
-                                        <img class="img-fluid" src="/../static/img/1000x1000.jpg" title="" alt="">
-                                    </a>
-                                    <div class="product-cart-btn">
-                                        <a href="#" class="btn btn-primary btn-sm w-100">
-                                            <i class="bi bi-cart"></i>
-                                            Add to cart
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-meta small">
-                                    <a href="#">Clothing</a>, <a href="#">Men</a>
-                                </div>
-                                <div class="rating-star text">
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <h6 class="product-title">
-                                    <a href="#">Fine-knit sweater</a>
-                                </h6>
-                                <div class="product-price">
-                                    <span class="text-primary">$28.<small>50</small></span>
-                                    <del class="fs-sm text-muted">$38.<small>50</small></del>
+                        <!-- Slide -->
+                        <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/dune.jpg);">
+                            <div class="container">
+                                <div class="row min-vh-75 align-items-center justify-content-center py-12">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-2">
-                        <div class="product-card-1">
-                            <div class="product-card-image">
-                                <div class="badge-ribbon">
-                                    <span class="badge bg-danger">Sale</span>
-                                </div>
-                                <div class="product-action">
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-heart"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-arrow-left-right"></i>
-                                    </a>
-                                    <a data-bs-toggle="modal" data-bs-target="#px-quick-view" href="javascript:void(0)" class="btn btn-outline-primary">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
-                                </div>
-                                <div class="product-media">
-                                    <a href="#">
-                                        <img class="img-fluid" src="/../static/img/1000x1000.jpg" title="" alt="">
-                                    </a>
-                                    <div class="product-cart-btn">
-                                        <a href="#" class="btn btn-primary btn-sm w-100">
-                                            <i class="bi bi-cart"></i>
-                                            Add to cart
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-meta small">
-                                    <a href="#">Clothing</a>, <a href="#">Men</a>
-                                </div>
-                                <div class="rating-star text">
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <h6 class="product-title">
-                                    <a href="#">Fine-knit sweater</a>
-                                </h6>
-                                <div class="product-price">
-                                    <span class="text-primary">$28.<small>50</small></span>
-                                    <del class="fs-sm text-muted">$38.<small>50</small></del>
+                        <!-- Slide -->
+                        <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/lalaland.jpg);">
+                            <div class="container">
+                                <div class="row min-vh-75 align-items-center justify-content-center py-12">               
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-2">
-                        <div class="product-card-1">
-                            <div class="product-card-image">
-                                <div class="badge-ribbon">
-                                    <span class="badge bg-danger">Sale</span>
-                                </div>
-                                <div class="product-action">
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-heart"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-primary">
-                                        <i class="bi bi-arrow-left-right"></i>
-                                    </a>
-                                    <a data-bs-toggle="modal" data-bs-target="#px-quick-view" href="javascript:void(0)" class="btn btn-outline-primary">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
-                                </div>
-                                <div class="product-media">
-                                    <a href="#">
-                                        <img class="img-fluid" src="/../static/img/1000x1000.jpg" title="" alt="">
-                                    </a>
-                                    <div class="product-cart-btn">
-                                        <a href="#" class="btn btn-primary btn-sm w-100">
-                                            <i class="bi bi-cart"></i>
-                                            Add to cart
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-meta small">
-                                    <a href="#">Clothing</a>, <a href="#">Men</a>
-                                </div>
-                                <div class="rating-star text">
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <h6 class="product-title">
-                                    <a href="#">Fine-knit sweater</a>
-                                </h6>
-                                <div class="product-price">
-                                    <span class="text-primary">$28.<small>50</small></span>
-                                    <del class="fs-sm text-muted">$38.<small>50</small></del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
-        <!-- End You may also like -->
     </main>
     <!-- End Main -->
 
@@ -474,9 +254,8 @@ export default {
     return {
       medium: {},
       newReview: {
-        medium_id: this.$route.params.id
+        medium_id: this.$route.params.id,
       },
-      media: {},
     };
   },
   created: function() {
@@ -504,6 +283,13 @@ export default {
         console.log("Here's the movies and tv...");
         this.media = response.data;
       });
+    },
+    isLoggedIn: function() {
+      if (localStorage.getItem('jwt')) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };
