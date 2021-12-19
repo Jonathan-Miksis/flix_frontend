@@ -33,7 +33,7 @@
             </div>
         </div>
         <!-- End Breadcrumb -->
-        <!-- Shop -->
+        <!-- Shop --> 
         <section class="py-6">
             <div class="container-fluid px-xxl-8">
                 <!-- Product Box -->
@@ -42,18 +42,15 @@
                         <form class="position-relative w-100 pt-4">
                         <div class="mb-3 input-group">
                             <!-- Search input -->
-                            <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" v-model="searchTerm" list="titles">
-                             <datalist id="titles">
-                                <option v-for="medium in media">{{ medium.title }}</option>
-                            </datalist>
+                            <input class="form-control mr-sm-2" type="text"  placeholder="Search" v-model="search">
                             <!-- Search button -->
-                            <button type="button" class="btn btn-dark shadow-none" v-on:click="searchMedium(medium)">
+                            <button type="button" class="btn btn-dark shadow-none" v-on:click="findMedia()">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
                     </form>
                     </div>
-                    <div class="shortby-dropdown ms-auto">
+                    <!-- <div class="shortby-dropdown ms-auto">
                         <div class="dropdown" >
                             <a class="btn btn-white btn-sm border dropdown-toggle" href="#" role="button"
                                 id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,7 +68,7 @@
                                     </datalist>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row g-3">
                     <!-- Product Box -->
@@ -124,11 +121,12 @@ export default {
   data: function() {
     return {
       media: [],
-      searchTerm: "",
+      search: "",
       sortOrder: 1,
       sortAttribute: "title",
       filterOptions: ["Title", "Director", "Rating"],
       medium: {},
+      searched: [],
     };
   },
 
@@ -152,14 +150,6 @@ export default {
         this.$router.push("/media/" + medium.id);
       });
     },
-    searchMedium: function(movie) {
-      axios.get("/media/" + 13).then((response) => {
-        console.log(response.data);
-        this.media = response.data;
-        console.log(this.media)
-
-      });
-    },
     createWatchlist: function() {
         axios.post("/watchlist" + this.newWatchlistItem).then((response) => {
           console.log("adding to watchlist..");
@@ -168,15 +158,13 @@ export default {
           console.log("error creating the review", error.response);
           this.errors = error.response.data.errors;
         });
+    },
+    findMedia: function() {
+        axios.get("/search", {params: {search: this.search}}).then((response) => {
+            console.log(response.data);
+            this.media = [response.data]
+        })
     }
-    // searchMedium: function(medium) {
-    //     axios.get("/media/" + medium.title).then((response) => {
-    //     console.log("pulling up the medium...");
-    //     console.log(response.data);
-    //     this.medium = response.data;
-    //     this.$router.push("/media/" + medium.id);
-    //     });
-    // },
-  },
+  }
 };
 </script>
