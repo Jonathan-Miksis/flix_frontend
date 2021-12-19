@@ -116,7 +116,7 @@
                         </div>
                     </div>
                     <!-- End Product Box -->  
-                <div class="shop-bottom-bar d-flex align-items-center pt-3 mt-3">
+                <!-- <div class="shop-bottom-bar d-flex align-items-center pt-3 mt-3">
                     <div>Showing: 1 - 12 of 17</div>
                     <div class="ms-auto">
                         <ul class="pagination">
@@ -135,7 +135,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <!-- End Product Box -->
             </div>
         </section>

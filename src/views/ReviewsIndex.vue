@@ -33,7 +33,10 @@
                                     </a>
                                     <div class="mt-n8 mx-3 mx-lg-4 border bg-white p-4 position-relative">
                                         <div class="text-muted mb-3">{{ review.user.username }}</div>
-                                        <a class="h5" href="#">{{ review.title }} || {{review.flix_rating}}</a> 
+                                        <div class="h5" href="#">{{ review.title }} </div> 
+                                        <div class="product-meta small rating-star text">
+                                          <b> {{review.flix_rating}} / 10 </b> <i class="bi bi-star-fill active"></i>
+                                        </div>
                                         <p class="pt-3">{{review.post}}</p>
                                         <a class="ms-auto font-w-600 link-effect" href="blog-single.html">Go to Page</a>
                                     </div>
