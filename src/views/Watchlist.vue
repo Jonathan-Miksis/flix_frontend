@@ -28,108 +28,21 @@
                     <table class="table table-bordered align-middle">
                         <thead>
                             <tr class="text-uppercase text-nowrap">
-                                <th style="width: 80px;" class="text-dark fw-500">Image</th>
-                                <th class="text-dark fw-500">Product Name</th>
-                                <th style="width: 120px;" class="text-dark fw-500">Until Price</th>
-                                <th style="width: 120px;" class="text-dark fw-500">Qty</th>
-                                <th style="width: 120px;" class="text-dark fw-500">Subtotal</th>
-                                <th style="width: 230px;" class="text-dark text-end fw-500 ">Action</th>
+                                <th style="width: 80px;" class="text-dark fw-500">Artwork</th>
+                                <th class="text-dark fw-500">Title</th>
+                                <th style="width: 120px;" class="text-dark fw-500">Rating</th>
+                                <th style="width: 230px;" class="text-dark text-end fw-500 ">Watched?</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr v-for="watchlist_item in watchlists">
                                 <td class="product-thumbnail">
-                                    <a class="text-reset" href="#"><img src="/../static/img/1000x1000.jpg" class="img-fluid" width="60" alt=""></a>
+                                    <a class="text-reset" href="#"><img v-bind:src="watchlist_item.medium.artwork_url" class="img-fluid" width="60" alt=""></a>
                                 </td>
-                                <td class="product-name"><a class="text-reset" href="#">Product Name</a></td>
-                                <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                <td class="product-quantity">
-                                    <div class="cart-qty d-inline-flex">
-                                        <div class="dec qty-btn">-</div>
-                                        <input class="cart-qty-input form-control" type="text" name="qtybutton" value="1">
-                                        <div class="inc qty-btn">+</div>
-                                    </div>
-                                </td>
-                                <td class="product-subtotal">$110.00</td>
+                                <td class="product-name"><a class="text-reset" href="#">{{watchlist_item.medium.title}}</a></td>
+                                <td class="product-price-cart"><span class="amount">{{watchlist_item.medium.rating}}</span></td>
                                 <td class="product-remove text-end text-nowrap">
-                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary text-nowrap px-3"><i class="bi bi-cart lh-1 me-md-1"></i> <span class="d-none d-md-inline-block">ADD TO CART</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <a class="text-reset" href="#"><img src="/../static/img/1000x1000.jpg" class="img-fluid" width="60" alt=""></a>
-                                </td>
-                                <td class="product-name"><a class="text-reset" href="#">Product Name</a></td>
-                                <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                <td class="product-quantity">
-                                    <div class="cart-qty d-inline-flex">
-                                        <div class="dec qty-btn">-</div>
-                                        <input class="cart-qty-input form-control" type="text" name="qtybutton" value="1">
-                                        <div class="inc qty-btn">+</div>
-                                    </div>
-                                </td>
-                                <td class="product-subtotal">$110.00</td>
-                                <td class="product-remove text-end text-nowrap">
-                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary text-nowrap px-3"><i class="bi bi-cart lh-1 me-md-1"></i> <span class="d-none d-md-inline-block">ADD TO CART</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <a class="text-reset" href="#"><img src="/../static/img/1000x1000.jpg" class="img-fluid" width="60" alt=""></a>
-                                </td>
-                                <td class="product-name"><a class="text-reset" href="#">Product Name</a></td>
-                                <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                <td class="product-quantity">
-                                    <div class="cart-qty d-inline-flex">
-                                        <div class="dec qty-btn">-</div>
-                                        <input class="cart-qty-input form-control" type="text" name="qtybutton" value="1">
-                                        <div class="inc qty-btn">+</div>
-                                    </div>
-                                </td>
-                                <td class="product-subtotal">$110.00</td>
-                                <td class="product-remove text-end text-nowrap">
-                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary text-nowrap px-3"><i class="bi bi-cart lh-1 me-md-1"></i> <span class="d-none d-md-inline-block">ADD TO CART</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <a class="text-reset" href="#"><img src="/../static/img/1000x1000.jpg" class="img-fluid" width="60" alt=""></a>
-                                </td>
-                                <td class="product-name"><a class="text-reset" href="#">Product Name</a></td>
-                                <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                <td class="product-quantity">
-                                    <div class="cart-qty d-inline-flex">
-                                        <div class="dec qty-btn">-</div>
-                                        <input class="cart-qty-input form-control" type="text" name="qtybutton" value="1">
-                                        <div class="inc qty-btn">+</div>
-                                    </div>
-                                </td>
-                                <td class="product-subtotal">$110.00</td>
-                                <td class="product-remove text-end text-nowrap">
-                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary text-nowrap px-3"><i class="bi bi-cart lh-1 me-md-1"></i> <span class="d-none d-md-inline-block">ADD TO CART</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <a class="text-reset" href="#"><img src="/../static/img/1000x1000.jpg" class="img-fluid" width="60" alt=""></a>
-                                </td>
-                                <td class="product-name"><a class="text-reset" href="#">Product Name</a></td>
-                                <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                <td class="product-quantity">
-                                    <div class="cart-qty d-inline-flex">
-                                        <div class="dec qty-btn">-</div>
-                                        <input class="cart-qty-input form-control" type="text" name="qtybutton" value="1">
-                                        <div class="inc qty-btn">+</div>
-                                    </div>
-                                </td>
-                                <td class="product-subtotal">$110.00</td>
-                                <td class="product-remove text-end text-nowrap">
-                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary text-nowrap px-3"><i class="bi bi-cart lh-1 me-md-1"></i> <span class="d-none d-md-inline-block">ADD TO CART</span></a>
+                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i> <span class="d-none d-md-inline-block">Remove from Watchlist</span></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -142,3 +55,27 @@
     <!-- End Main -->
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+
+  data: function() {
+    return {
+      watchlists: []
+    }
+  },
+  methods: {
+    indexWatchlist: function() {
+      axios.get("/watchlist").then((response) => {
+        console.log("Here is your watchlist...");
+        this.watchlists = response.data;
+      });
+    },
+  },
+  created: function() {
+    this.indexWatchlist();
+  },
+};
+</script>

@@ -82,13 +82,6 @@
                                     <a href="#" class="btn btn-outline-dark">
                                         <i class="bi bi-heart"></i>
                                     </a>
-                                    <a href="#" class="btn btn-outline-dark">
-                                        <i class="bi bi-arrow-left-right"></i>
-                                    </a>
-                                    <a data-bs-toggle="modal" data-bs-target="#px-quick-view" href="javascript:void(0)"
-                                        class="btn btn-outline-dark">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
                                 </div>
                                 <div class="product-media">
                                     <a href="#">
@@ -115,28 +108,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End Product Box -->  
-                <!-- <div class="shop-bottom-bar d-flex align-items-center pt-3 mt-3">
-                    <div>Showing: 1 - 12 of 17</div>
-                    <div class="ms-auto">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- End Product Box -->
             </div>
         </section>
         <!-- End Shop -->
@@ -189,6 +160,15 @@ export default {
 
       });
     },
+    createWatchlist: function() {
+        axios.post("/watchlist" + this.newWatchlistItem).then((response) => {
+          console.log("adding to watchlist..");
+        })
+        .catch((error) => {
+          console.log("error creating the review", error.response);
+          this.errors = error.response.data.errors;
+        });
+    }
     // searchMedium: function(medium) {
     //     axios.get("/media/" + medium.title).then((response) => {
     //     console.log("pulling up the medium...");
