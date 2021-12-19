@@ -8,6 +8,7 @@ import ReviewsIndex from '../views/ReviewsIndex.vue'
 import MediaIndex from '../views/MediaIndex.vue'
 import ReviewNew from '../views/ReviewNew.vue'
 import MediumShow from '../views/MediumShow.vue'
+import Watchlist from '../views/Watchlist.vue'
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ const routes = [
     path: '/logout',
     name: 'Logout',
     component: Logout
+  },
+  {
+    path: '/watchlist',
+    name: 'Watchlist',
+    component: Watchlist
   },
 ]
 

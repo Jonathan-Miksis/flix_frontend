@@ -83,7 +83,7 @@
                             <a class="dropdown-item" v-if="!isLoggedIn()" href="/login">Login</a>
                             <a class="dropdown-item" v-if="isLoggedIn()" href="/logout">Logout</a>
                             <a class="dropdown-item" v-if="!isLoggedIn()"  href="/signup">Register</a>
-                            <a class="dropdown-item" v-if="isLoggedIn()" href="wishlist.html">Watchlist</a>
+                            <a class="dropdown-item" v-if="isLoggedIn()" href="/watchlist">Watchlist</a>
                             <a class="dropdown-item" v-if="isLoggedIn()" href="my-account.html">My account</a>
                         </div>
                     </div>
