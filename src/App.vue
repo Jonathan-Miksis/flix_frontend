@@ -14,35 +14,6 @@
         </div>
     </div>
     <!-- End Preload -->
-    <!-- Search START -->
-    <div class="modal fade px-search-full px-modal-right" id="search_open">
-        <div class="modal-dialog px-modal-vertical">
-            <div class="modal-content">
-                <!-- Header-->
-                <div class="modal-header border-bottom">
-                    <h6 class="m-0 h5 font-w-600">
-                        Search
-                    </h6>
-                    <!-- Close -->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="position-relative w-100 pt-4">
-                        <div class="mb-3 input-group">
-                            <!-- Search input -->
-                            <input class="form-control shadow-none" type="text" name="search" placeholder="Search Movies &amp; TV">
-                            <!-- Search button -->
-                            <button type="button" class="btn btn-dark shadow-none">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search END -->
     <!-- Quick View Modal-->
     <div class="modal-quick-view modal fade" id="px-quick-view" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -103,15 +74,6 @@
                 </div>
                 <!-- End Menu -->
                 <div class="nav flex-nowrap align-items-center header-right">
-                    <!-- Nav Search-->
-                    <div class="nav-item" v-if="isLoggedIn()">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#search_open" v-model="searchTerm" list="titles">
-                            <datalist id="titles">
-                                <option v-for="medium in media">{{ medium.title }}</option>
-                            </datalist>
-                            <i class="bi bi-search"> </i>
-                        </a>
-                    </div>
                     <!-- Account -->
                     <div class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button" id="dropdown_myaccount" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -165,12 +127,6 @@ export default {
       } else {
         return false;
       }
-    },
-    indexMedia: function() {
-      axios.get("/media").then((response) => {
-        console.log("Here's the movies and tv...");
-        this.media = response.data;
-      });
     },
   }
 }

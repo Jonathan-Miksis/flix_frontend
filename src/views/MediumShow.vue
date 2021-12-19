@@ -114,7 +114,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 text-sm-end">
-                                                    <a href="/reviews" class="me-4">View all</a>
                                                     <a data-bs-toggle="collapse" href="/login" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="!isLoggedIn()" >Sign in to leave a review</a>
                                                     <a data-bs-toggle="collapse" href="#pd_add_review" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="isLoggedIn()">Write a review</a>
                                                 </div>
@@ -148,13 +147,9 @@
                                                 </div>
                                                 <div class="col ps-3" v-for="review in medium.reviews" v-bind:key="review.id">
                                                     <h6 class="m-0">{{ review.user }}</h6>
-                                                    <div class="rating-star small">
-                                                        <i class="bi small bi-star-fill active"></i>
-                                                        <i class="bi small bi-star-fill active"></i>
-                                                        <i class="bi small bi-star-fill active"></i>
-                                                        <i class="bi small bi-star-fill active"></i>
-                                                        <i class="bi small bi-star"></i>
-                                                        <span><b>{{ review.title }}</b></span>
+                                                    <span><b>{{ review.title }}</b></span>
+                                                    <div class="product-meta small rating-star text">
+                                                        <b> {{review.flix_rating}} / 10 </b> <i class="bi bi-star-fill active"></i>
                                                     </div>
                                                     <p class="m-0 pt-2 small">{{ review.post }}</p>
                                                 </div>
