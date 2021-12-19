@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="form-group row align-items-center">
                                         <div class="col">
-                                            <button type="submit" class="btn btn-primary">
+                                            <button type="submit" class="btn btn-dark">
                                                 Create Account
                                             </button>
                                         </div>

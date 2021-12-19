@@ -79,7 +79,7 @@
                             
                             <div class="product-detail-actions d-flex flex-wrap pt-3">
                                 <div class="cart-button mb-3 d-flex">
-                                    <a v-bind:href="medium.trailer_url">
+                                    <a v-bind:href="medium.trailer_url" target="_blank" rel="noopener noreferrer">
                                     <button class="btn btn-dark me-3">
                                         <i></i> Trailer
                                     </button>

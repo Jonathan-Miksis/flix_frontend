@@ -48,7 +48,7 @@
                                         <label class="form-check-label" for="form2Example3"> Remember me </label>
                                     </div>
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-primary w-100" value="submit"><a href="/"></a>
+                                        <button type="submit" class="btn btn-dark w-100" value="submit"><a href="/media"></a>
                                             Log in
                                         </button>
                                     </div>

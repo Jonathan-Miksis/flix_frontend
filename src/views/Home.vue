@@ -92,10 +92,10 @@
                     <div class="row min-vh-75 align-items-center justify-content-center py-12">
                         <div class="col-lg-8 text-center">
                             <div class="bg-white px-4 py-4 hc-slider-box">
-                                <h6 class="fw-500 text-uppercase mb-3">You're Looking Good</h6>
-                                <h1 class="display-6 fw-600 text-uppercase">New LookBook</h1>
+                                <h6 class="fw-500 text-uppercase mb-3">Already Have an Account?</h6>
+                                <h1 class="display-6 fw-600 text-uppercase">Flix</h1>
                                 <div class="pt-2">
-                                    <a class="btn btn-outline-dark" href="#">Discover More</a>
+                                    <a class="btn btn-outline-dark" href="/login">Login</a>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                 <div class="row g-3">
                     <div class="col-sm-6 col-lg-3">
                         <div class="d-flex">
-                            <div class="fs-1 lh-1 text-primary">
+                            <div class="fs-1 lh-1 text-dark">
                                 <i class="bi bi-search"></i>
                             </div>
                             <div class="col ps-3">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="d-flex">
-                            <div class="fs-1 lh-1 text-primary">
+                            <div class="fs-1 lh-1 text-dark">
                                 <i class="bi bi-person-circle"></i>
                             </div>
                             <div class="col ps-3">
@@ -132,7 +132,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="d-flex">
-                            <div class="fs-1 lh-1 text-primary">
+                            <div class="fs-1 lh-1 text-dark">
                                 <i class="bi bi-heart"></i>
                             </div>
                             <div class="col ps-3">
@@ -143,7 +143,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="d-flex">
-                            <div class="fs-1 lh-1 text-primary">
+                            <div class="fs-1 lh-1 text-dark">
                                 <i class="bi bi-star-fill active"></i>
                             </div>
                             <div class="col ps-3">
