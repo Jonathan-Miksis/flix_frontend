@@ -69,12 +69,7 @@
                               <span> {{medium.year}} </span>
                             </div>
                             <div class="rating-star text small pb-4">
-                                <i class="bi bi-star-fill active"></i>
-                                <i class="bi bi-star-fill active"></i>
-                                <i class="bi bi-star-fill active"></i>
-                                <i class="bi bi-star-fill active"></i>
-                                <i class="bi bi-star"></i>
-                                <small>{{medium.rating}}</small>
+                                <b><small>{{medium.rating}} / 10</small></b> <i class="bi bi-star-fill active"></i>
                             </div>
                             <div class="product-description">
                                 <p>Director: {{medium.director}}</p>
@@ -84,9 +79,11 @@
                             
                             <div class="product-detail-actions d-flex flex-wrap pt-3">
                                 <div class="cart-button mb-3 d-flex">
-                                    <button class="btn btn-dark me-3" v-bind:src="medium.trailer_url"><a></a>
+                                    <a v-bind:href="medium.trailer_url">
+                                    <button class="btn btn-dark me-3">
                                         <i></i> Trailer
                                     </button>
+                                    </a>
                                     <dialog id="show-trailer">
                                         <form method="dialog">
                                             <p>Here's the Trailer</p>
@@ -118,7 +115,7 @@
                                                 </div>
                                                 <div class="col-sm-6 text-sm-end">
                                                     <a href="/reviews" class="me-4">View all</a>
-                                                    <a data-bs-toggle="collapse" href="/login" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="!isLoggedIn()">Sign in to leave a review</a>
+                                                    <a data-bs-toggle="collapse" href="/login" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="!isLoggedIn()" >Sign in to leave a review</a>
                                                     <a data-bs-toggle="collapse" href="#pd_add_review" role="button" aria-expanded="false" aria-controls="pd_add_review" v-if="isLoggedIn()">Write a review</a>
                                                 </div>
                                                 <div class="col-12 collapse" id="pd_add_review">
@@ -139,7 +136,7 @@
                                                                     <textarea rows="5" v-model="newReview.post" class="form-control"></textarea>
                                                                 </div>
                                                                 <div class="col-sm-12 pt-2">
-                                                                    <button class="btn btn-primary" v-on:click="createReview()">Submit Review</button>
+                                                                    <button class="btn btn-dark" v-on:click="createReview()">Submit Review</button>
                                                                 </div>
                                                             </div>
                                                         </form>

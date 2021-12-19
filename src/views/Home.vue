@@ -114,7 +114,7 @@
                                 <i class="bi bi-search"></i>
                             </div>
                             <div class="col ps-3">
-                                <h6 class="mb-1">100s of Movies and Shows</h6>
+                                <h6 class="mb-1">1000s of Movies and Shows</h6>
                                 <p class="m-0">FInd your next obsession in the database</p>
                             </div>
                         </div>

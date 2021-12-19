@@ -9,7 +9,7 @@
     <!-- End Skippy -->
     <!-- Preload -->
     <div id="loading" class="preloader">
-        <div class="spinner-border text-primary" role="status">
+        <div class="spinner-border text-dark" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
@@ -33,7 +33,7 @@
                             <!-- Search input -->
                             <input class="form-control shadow-none" type="text" name="search" placeholder="Search Movies &amp; TV">
                             <!-- Search button -->
-                            <button type="button" class="btn btn-primary shadow-none">
+                            <button type="button" class="btn btn-dark shadow-none">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
@@ -69,7 +69,7 @@
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="/">
-                    Flix: The Movie Lovers App
+                    <img src="../public/static/img/logo_final-2.png">
                 </a>
                 <!-- Logo -->
                 <!-- Menu -->
@@ -104,7 +104,7 @@
                 <!-- End Menu -->
                 <div class="nav flex-nowrap align-items-center header-right">
                     <!-- Nav Search-->
-                    <div class="nav-item">
+                    <div class="nav-item" v-if="isLoggedIn()">
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#search_open" v-model="searchTerm" list="titles">
                             <datalist id="titles">
                                 <option v-for="medium in media">{{ medium.title }}</option>
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <!-- Wishlist -->
-                    <div class="nav-item d-none d-xl-block">
+                    <div class="nav-item d-none d-xl-block" v-if="isLoggedIn()">
                         <a class="nav-link" href="#">
                             <i class="bi bi-heart"> </i>
                         </a>

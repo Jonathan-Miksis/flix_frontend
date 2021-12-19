@@ -49,7 +49,7 @@
                             <div class="card-body p-3">
                                 <form class="d-flex input-group">
                                     <input type="email" class="form-control" placeholder="Search">
-                                    <button class="btn btn-primary flex-shrink-0" type="submit"><i class="bi bi-search"></i></button>
+                                    <button class="btn btn-dark flex-shrink-0" type="submit"><i class="bi bi-search"></i></button>
                                 </form>
                             </div>
                         </div>

@@ -39,9 +39,19 @@
                 <!-- Product Box -->
                 <div class="shop-top-bar d-flex pb-3">
                     <div class="layout-change">
-                        <a class="btn btn-white btn-sm active" href="/media"><i class="bi bi-grid"></i></a>
-                        <a class="btn btn-white btn-sm" href="/media"><i
-                                class="bi bi-view-stacked"></i></a>
+                        <form class="position-relative w-100 pt-4">
+                        <div class="mb-3 input-group">
+                            <!-- Search input -->
+                            <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" v-model="searchTerm" list="titles">
+                             <datalist id="titles">
+                                <option v-for="medium in media">{{ medium.title }}</option>
+                            </datalist>
+                            <!-- Search button -->
+                            <button type="button" class="btn btn-dark shadow-none" v-on:click="searchMedium(medium)">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
                     </div>
                     <div class="shortby-dropdown ms-auto">
                         <div class="dropdown" >
@@ -69,14 +79,14 @@
                         <div class="product-card-1">
                             <div class="product-card-image">
                                 <div class="product-action">
-                                    <a href="#" class="btn btn-outline-primary">
+                                    <a href="#" class="btn btn-outline-dark">
                                         <i class="bi bi-heart"></i>
                                     </a>
-                                    <a href="#" class="btn btn-outline-primary">
+                                    <a href="#" class="btn btn-outline-dark">
                                         <i class="bi bi-arrow-left-right"></i>
                                     </a>
                                     <a data-bs-toggle="modal" data-bs-target="#px-quick-view" href="javascript:void(0)"
-                                        class="btn btn-outline-primary">
+                                        class="btn btn-outline-dark">
                                         <i class="bi bi-eye-fill"></i>
                                     </a>
                                 </div>
@@ -85,7 +95,7 @@
                                         <img class="img-fluid" v-bind:src="medium.artwork_url" title="" alt="">
                                     </a>
                                     <div class="product-cart-btn">
-                                        <a v-on:click="showMedium(medium)" class="btn btn-primary btn-sm w-100">    
+                                        <a v-on:click="showMedium(medium)" class="btn btn-dark btn-sm w-100">    
                                             More on This
                                         </a>
                                     </div>
@@ -98,15 +108,8 @@
                                 <div class="product-meta small">
                                     {{medium.year}}
                                 </div>
-                                <div class="product-meta small">
-                                    {{medium.rating}}
-                                </div>
-                                <div class="rating-star text">
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star-fill active"></i>
-                                    <i class="bi bi-star"></i>
+                                <div class="product-meta small rating-star text">
+                                   <b> {{medium.rating}} / 10 </b> <i class="bi bi-star-fill active"></i>
                                 </div>
                                 </div>
                             </div>
@@ -149,11 +152,12 @@ export default {
   mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      media: {},
+      media: [],
       searchTerm: "",
       sortOrder: 1,
       sortAttribute: "title",
-      filterOptions: ["Title", "Director", "Rating"]
+      filterOptions: ["Title", "Director", "Rating"],
+      medium: {},
     };
   },
 
@@ -177,6 +181,22 @@ export default {
         this.$router.push("/media/" + medium.id);
       });
     },
+    searchMedium: function(movie) {
+      axios.get("/media/" + 13).then((response) => {
+        console.log(response.data);
+        this.media = response.data;
+        console.log(this.media)
+
+      });
+    },
+    // searchMedium: function(medium) {
+    //     axios.get("/media/" + medium.title).then((response) => {
+    //     console.log("pulling up the medium...");
+    //     console.log(response.data);
+    //     this.medium = response.data;
+    //     this.$router.push("/media/" + medium.id);
+    //     });
+    // },
   },
 };
 </script>
