@@ -1,33 +1,5 @@
 <template>
   <div class="media-show">
-
-        <!-- <h2>Title: {{ medium.title}}</h2>
-    <p>Release Year: {{ medium.year }}</p>
-    <p>Director: {{ medium.director }}</p>
-    <p>Cast: {{ medium.cast }}</p>  
-    <p>Synopsis: {{ medium.synopsis }}</p>  
-    <p>IMDb Rating: {{ medium.rating }}</p>
-    <img v-bind:src="medium.artwork_url" v-bind:alt="medium.title"> 
-    <img v-bind:src="medium.trailer_url" v-bind:alt="medium.title">
-    <h3>Flix Reviews:</h3> 
-    <div v-for="review in medium.reviews" v-bind:key="review.id"> 
-      <p>{{ review.user }}</p>
-      <p><b>{{ review.title }}</b></p>
-      <p> Rating: {{ review.flix_rating }}</p>
-      <p> {{ review.post }}</p>
-    </div>
-
-    <div>
-      Title:
-        <input type="text" v-model="newReview.title" />
-      Rating:
-        <input type="text" v-model="newReview.flix_rating" />
-      Post:
-        <input type="text" v-model="newReview.post" />
-      
-      <button v-on:click="createReview()">Write A Review</button>
-    </div> -->
-
         <!-- Main -->
     <main>
         <!-- Breadcrumb -->
@@ -131,7 +103,7 @@
                                                                     <input type="text" v-model="newReview.title" name="review" class="form-control form-control-sm">
                                                                 </div>
                                                                 <div class="col-sm-12">
-                                                                    <label class="form-label">Body of Review (1500)</label>
+                                                                    <label class="form-label">Body of Review</label>
                                                                     <textarea rows="5" v-model="newReview.post" class="form-control"></textarea>
                                                                 </div>
                                                                 <div class="col-sm-12 pt-2">

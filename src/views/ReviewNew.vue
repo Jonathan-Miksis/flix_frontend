@@ -5,8 +5,6 @@
        <ul>
          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
        </ul>
-       <!-- Movie: 
-      <input type="text" v-model="" /> -->
        Title:
        <input type="text" v-model="newReview.title" />
        Rating:

@@ -1,19 +1,5 @@
 <template>
   <div class="media-index">
-        <!-- Search: <input type="text" v-model="searchTerm" list="titles">
-    <datalist id="titles">
-        <option v-for="medium in media">{{ medium.title }}</option>
-    </datalist>
-    <div v-for="medium in orderBy(filterBy(media, searchTerm, 'title'), sortAttribute, sortOrder)">
-    <h1>Movies and TV</h1>
-      <h2>Title: {{ medium.title}}</h2>
-      <p>Release Year: {{ medium.year }}</p>
-      <p>IMDb Rating: {{ medium.rating }}</p>
-      <!-- <img v-bind:src="medium.artwork_url" v-bind:alt="medium.title">  -->
-      <!-- <button v-on:click="showMedium(medium)">More Information</button>
-      <hr>
-    </div> --> 
-
     <main>
         <!-- Breadcrumb -->
         <div class="py-3 bg-gray-100">
@@ -57,7 +43,7 @@
                         <div class="product-card-1">
                             <div class="product-card-image">
                                 <div class="product-action">
-                                    <button v-on:click="createWatchlist()" v-bind:key="medium.id" class="btn btn-outline-dark">
+                                    <button v-on:click="createWatchlist(medium)" v-bind:key="medium.id" class="btn btn-outline-dark">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -108,7 +94,9 @@ export default {
       filterOptions: ["Title", "Director", "Rating"],
       medium: {},
       searched: [],
-      newWatchlistItem: {}
+      newWatchlistItem: {
+          status: "watch",
+      }
     };
   },
 
