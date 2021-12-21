@@ -94,9 +94,7 @@ export default {
       filterOptions: ["Title", "Director", "Rating"],
       medium: {},
       searched: [],
-      newWatchlistItem: {
-          status: "watch",
-      }
+      watchlist: []
     };
   },
 
@@ -118,9 +116,12 @@ export default {
         this.$router.push("/media/" + medium.id);
       });
     },
-    createWatchlist: function() {
-        axios.post("/watchlist", this.newWatchlistItem).then((response) => {
-          console.log("adding to watchlist..");
+    createWatchlist: function(medium) {
+        axios.post("/watchlist", {
+            status: "watch",
+            medium_id: medium.id
+        }).then((response) => {
+          this.watchlist = response.data
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
