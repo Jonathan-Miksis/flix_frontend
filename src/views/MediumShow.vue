@@ -25,10 +25,9 @@
                 <div class="row align-items-start">
                     <!-- Product Gallery -->
                     <div class="col-lg-6 lightbox-gallery product-gallery sticky-lg-top">
-                            <div>
-                                <a class="gallery-link" href="//../static/img/1000x1000.jpg"><i class="bi bi-arrows-fullscreen"></i></a>
-                                <img v-bind:src="medium.artwork_url" class="img-fluid" title="" alt="">
-                            </div>
+                        <div>
+                            <img v-bind:src="medium.artwork_url" class="img-fluid" title="" alt="">
+                        </div>
                     </div>
                     <!-- End Product Gallery -->
                     <!-- Product Details -->
@@ -256,9 +255,17 @@ export default {
         return false;
       }
     },
-    doModal: function() {
-        document.querySelector("#show-trailer").showModal();
-    }
+    createWatchlist: function(medium) {
+    axios.post("/watchlist", {
+        status: "watch",
+        medium_id: medium.id
+    }).then((response) => {
+        this.watchlist = response.data
+    })
+    .catch((error) => {
+        this.errors = error.response.data.errors;
+    });
+    },
   },
 };
 </script>

@@ -30,7 +30,7 @@
                             <tr class="text-uppercase text-nowrap">
                                 <th style="width: 80px;" class="text-dark fw-500">Artwork</th>
                                 <th class="text-dark fw-500">Title</th>
-                                <th style="width: 120px;" class="text-dark fw-500">Rating</th>
+                                <th style="width: 120px;" class="text-dark fw-500">IMDb Rating</th>
                                 <th style="width: 230px;" class="text-dark text-end fw-500 ">Watched?</th>
                             </tr>
                         </thead>
@@ -42,7 +42,7 @@
                                 <td class="product-name"><a class="text-reset" href="#">{{watchlist_item.medium.title}}</a></td>
                                 <td class="product-price-cart"><span class="amount">{{watchlist_item.medium.rating}}</span></td>
                                 <td class="product-remove text-end text-nowrap">
-                                    <a href="#" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1"></i> <span class="d-none d-md-inline-block">Remove from Watchlist</span></a>
+                                    <button v-on:click="destroyWatchlist(watchlist_item)" class="btn btn-sm btn-outline-dark text-nowrap px-3"><i class="bi bi-x lh-1" @click="reloadPage"></i> <span class="d-none d-md-inline-block">Remove</span></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -72,6 +72,17 @@ export default {
         this.watchlists = response.data;
       });
     },
+    destroyWatchlist: function(watchlist_item) {
+       console.log('removing item...')
+       console.log(watchlist_item.id)
+       axios.delete(`/watchlist/${watchlist_item.id}`).then(response => {
+         console.log(response.data);
+        //  this.$router.push('/watchlist')
+       });
+     },
+     reloadPage() {
+         window.location.reload();
+     },
   },
   created: function() {
     this.indexWatchlist();
