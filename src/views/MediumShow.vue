@@ -261,23 +261,19 @@ export default {
   methods: {
     showMedium: function(){
       axios.get("/media/" + this.$route.params.id).then((response) => {
-        console.log("pulling up the medium...");
         this.medium = response.data;
       })
     },
     createReview: function () {
       axios.post("/reviews", this.newReview).then((response) => {
-          console.log("creating a new review...");
           this.$router.push("/reviews");
         })
         .catch((error) => {
-          console.log("error creating the review", error.response);
           this.errors = error.response.data.errors;
         });
     },
     indexMedia: function() {
       axios.get("/media").then((response) => {
-        console.log("Here's the movies and tv...");
         this.media = response.data;
       });
     },

@@ -50,25 +50,6 @@
                         </div>
                     </form>
                     </div>
-                    <!-- <div class="shortby-dropdown ms-auto">
-                        <div class="dropdown" >
-                            <a class="btn btn-white btn-sm border dropdown-toggle" href="#" role="button"
-                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Sort by
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Featured</a></li>
-                                <li><a class="dropdown-item" href="#">Best selling</a></li>
-                                <li><button class="dropdown-item" v-on:click="setSortAttribute('title')" > Alphabetically, A-Z</button></li>
-                                <li><a class="dropdown-item" href="#">Alphabetically, Z-A</a></li>
-                                <li><a class="dropdown-item" href="#">Date, old to new</a></li>
-                                <li><a class="dropdown-item" href="#">Date, new to old</a></li>
-                                    <datalist id="titles">
-                                        <option v-for="medium in media">{{ medium.title }}</option>
-                                    </datalist>
-                            </ul>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="row g-3">
                     <!-- Product Box -->
@@ -76,9 +57,9 @@
                         <div class="product-card-1">
                             <div class="product-card-image">
                                 <div class="product-action">
-                                    <a href="#" class="btn btn-outline-dark">
+                                    <button v-on:click="createWatchlist()" v-bind:key="medium.id" class="btn btn-outline-dark">
                                         <i class="bi bi-heart"></i>
-                                    </a>
+                                    </button>
                                 </div>
                                 <div class="product-media">
                                     <a href="#">
@@ -127,6 +108,7 @@ export default {
       filterOptions: ["Title", "Director", "Rating"],
       medium: {},
       searched: [],
+      newWatchlistItem: {}
     };
   },
 
@@ -136,7 +118,6 @@ export default {
   methods: {
     indexMedia: function() {
       axios.get("/media").then((response) => {
-        console.log("Here's the movies and tv...");
         this.media = response.data;
       });
     },
@@ -145,23 +126,20 @@ export default {
     },
     showMedium: function(medium) {
       axios.get("/media/" + this.$route.params.id).then((response) => {
-        console.log("pulling up the medium...");
         this.medium = response.data;
         this.$router.push("/media/" + medium.id);
       });
     },
     createWatchlist: function() {
-        axios.post("/watchlist" + this.newWatchlistItem).then((response) => {
+        axios.post("/watchlist", this.newWatchlistItem).then((response) => {
           console.log("adding to watchlist..");
         })
         .catch((error) => {
-          console.log("error creating the review", error.response);
           this.errors = error.response.data.errors;
         });
     },
     findMedia: function() {
         axios.get("/search", {params: {search: this.search}}).then((response) => {
-            console.log(response.data);
             this.media = [response.data]
         })
     }

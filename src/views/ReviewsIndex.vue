@@ -91,13 +91,11 @@ export default {
   methods: {
     indexReviews: function() {
       axios.get("/reviews").then((response) => {
-        console.log("Here are the reviews...");
         this.reviews = response.data;
       });
     },
     showMedium: function(medium) {
       axios.get("/media/" + this.$route.params.id).then((response) => {
-        console.log("pulling up the medium...");
         this.medium = response.data;
         this.$router.push("/media/" + medium.id);
       });

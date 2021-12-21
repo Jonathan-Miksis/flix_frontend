@@ -31,11 +31,9 @@ export default {
   methods: {
     createReview: function () {
       axios.post("/reviews", this.newReview).then((response) => {
-          console.log("creating a new review...");
           this.$router.push("/reviews");
         })
         .catch((error) => {
-          console.log("error creating the review", error.response);
           this.errors = error.response.data.errors;
         });
     },

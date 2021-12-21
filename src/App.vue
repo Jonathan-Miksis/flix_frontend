@@ -87,12 +87,6 @@
                             <a class="dropdown-item" v-if="isLoggedIn()" href="my-account.html">My account</a>
                         </div>
                     </div>
-                    <!-- Wishlist -->
-                    <div class="nav-item d-none d-xl-block" v-if="isLoggedIn()">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-heart"> </i>
-                        </a>
-                    </div>
                     <!-- Mobile Toggle -->
                     <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

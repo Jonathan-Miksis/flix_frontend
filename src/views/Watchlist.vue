@@ -69,7 +69,6 @@ export default {
   methods: {
     indexWatchlist: function() {
       axios.get("/watchlist").then((response) => {
-        console.log("Here is your watchlist...");
         this.watchlists = response.data;
       });
     },
