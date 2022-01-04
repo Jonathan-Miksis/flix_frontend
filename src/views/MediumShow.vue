@@ -138,7 +138,7 @@
         </section>
         <!-- End Product Details -->
         <!-- You may also like -->
-        <section class="section bg-gray-100 mt-6 mt-lg-10">
+        <!-- <section class="section bg-gray-100 mt-6 mt-lg-10">
             <div class="container">
                 <div class="row justify-content-center mb-4 mb-lg-6">
                     <div class="col-lg-6 text-center">
@@ -176,38 +176,34 @@
                             }
                         }
                     ]
-                }'>
-                    <!-- Slide -->
-                        <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/americans-s1.jpeg);">
+                }'> -->
+                        <!-- <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/americans-s1.jpeg);">
                             <div class="container">
                                 <div class="row min-vh-75 align-items-center justify-content-center py-12">
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide -->
                         <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/casino_royale.jpg);">
                             <div class="container">
                                 <div class="row min-vh-75 align-items-center justify-content-center py-12">
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide -->
                         <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/dune.jpg);">
                             <div class="container">
                                 <div class="row min-vh-75 align-items-center justify-content-center py-12">
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide -->
                         <div class="bg-no-repeat bg-cover bg-center mx-1" style="background-image: url(/../static/img/lalaland.jpg);">
                             <div class="container">
                                 <div class="row min-vh-75 align-items-center justify-content-center py-12">               
                                 </div>
                             </div>
-                        </div>
-                </div>
+                        </div> -->
+                <!-- </div>
             </div>
-        </section>
+        </section> -->
     </main>
     <!-- End Main -->
 
