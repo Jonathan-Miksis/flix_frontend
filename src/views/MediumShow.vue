@@ -55,11 +55,6 @@
                                         <i></i> Trailer
                                     </button>
                                     </a>
-                                    <dialog id="show-trailer">
-                                        <form method="dialog">
-                                            <p>Here's the Trailer</p>
-                                        </form>
-                                    </dialog>
                                 </div>
                             </div>
                         
