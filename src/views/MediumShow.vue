@@ -98,7 +98,7 @@
                                                                 </div>
                                                                 <div class="col-sm-12">
                                                                     <label class="form-label">Body of Review</label>
-                                                                    <textarea rows="5" v-model="newReview.post" class="form-control"></textarea>
+                                                                    <textarea rows="5" maxlength="1000" v-model="newReview.post" class="form-control"></textarea>
                                                                 </div>
                                                                 <div class="col-sm-12 pt-2">
                                                                     <button class="btn btn-dark" v-on:click="createReview()">Submit Review</button>

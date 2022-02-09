@@ -30,7 +30,7 @@
                             <!-- Search input -->
                             <input class="form-control mr-sm-2" type="text"  placeholder="Search" v-model="search">
                             <!-- Search button -->
-                            <button type="button" class="btn btn-dark shadow-none" v-on:click="findMedia()">
+                            <button type="button" class="btn btn-dark shadow-none" v-on:click="findMedia()" v-on:keyup.return="findMedia()">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
