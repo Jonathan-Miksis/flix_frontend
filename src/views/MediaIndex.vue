@@ -43,7 +43,8 @@
                         <div class="product-card-1">
                             <div class="product-card-image">
                                 <div class="product-action">
-                                    <button v-on:click="createWatchlist(medium)" v-bind:key="medium.id" class="btn btn-outline-dark">
+                                    <button v-on:click="createWatchlist(medium); say('Added to Watchlist')"
+                                     v-bind:key="medium.id" class="btn btn-outline-dark">
                                         <i class="bi bi-heart"></i>
                                     </button>
                                 </div>
@@ -131,6 +132,9 @@ export default {
         axios.get("/search", {params: {search: this.search}}).then((response) => {
             this.media = [response.data]
         })
+    },
+    say: function (message) {
+      alert(message);
     }
   }
 };
