@@ -57,6 +57,7 @@ export default {
   data: function() {
     return {
       reviews: {},
+      comments: {}
     };
   },
   created: function() {
@@ -73,6 +74,16 @@ export default {
         this.medium = response.data;
         this.$router.push("/media/" + medium.id);
       });
+    },
+    createComment: function () {
+      axios.post("/comments", this.newComment).then((response) => {
+          console.log("creating a new comment...");
+          this.comments = response.data
+        })
+        .catch((error) => {
+          console.log("error creating the review", error.response);
+          this.errors = error.response.data.errors;
+        });
     },
   },
 };

@@ -74,10 +74,10 @@ export default {
     },
     destroyWatchlist: function(watchlist_item) {
        axios.delete(`/watchlist/${watchlist_item.id}`).then(response => {
-         console.log(response.data);
+         this.watchlists = response.data
        });
      },
-     reloadPage() {
+     reloadPage: function() {
          window.location.reload();
      }
   },
